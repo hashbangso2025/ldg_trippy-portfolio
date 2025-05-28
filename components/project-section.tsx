@@ -111,6 +111,8 @@ export default function ProjectSection() {
       ],
       image: "/evan-boud-tutors-logo.png",
       isLogo: true,
+      hasDetailView: true,
+      detailPageUrl: "/projects/boudreau",
     },
     {
       id: 3,
@@ -125,6 +127,7 @@ export default function ProjectSection() {
       ],
       image: "/tuzzy-logo.png",
       isLogo: true,
+      hasDetailView: true,
       detailPageUrl: "https://tuzzy.gg/",
     },
     {
@@ -146,6 +149,8 @@ export default function ProjectSection() {
       ],
       image: "/nolenet-logo.png",
       isLogo: true,
+      hasDetailView: true,
+      detailPageUrl: "/projects/garnetgather",
     },
     {
       id: 6,
