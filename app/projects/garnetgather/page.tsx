@@ -17,10 +17,8 @@ const colors = {
 export default function GarnetGatherProjectPage() {
   const [mounted, setMounted] = useState(false)
   const [isHeroVisible, setIsHeroVisible] = useState(true)
-  const [animateStats, setAnimateStats] = useState(false)
   
   const heroRef = useRef<HTMLDivElement>(null)
-  const statsRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll()
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
 
@@ -28,22 +26,6 @@ export default function GarnetGatherProjectPage() {
   const heroImageY = useTransform(smoothProgress, [0, 0.2], [0, -100])
   const heroTextY = useTransform(smoothProgress, [0, 0.2], [0, -50])
   const heroOpacity = useTransform(smoothProgress, [0, 0.2], [1, 0])
-
-  // Stats counter animation
-  const { scrollYProgress: statsScrollProgress } = useScroll({
-    target: statsRef,
-    offset: ["start end", "end start"],
-  })
-
-  useEffect(() => {
-    const unsubscribe = statsScrollProgress.onChange((v) => {
-      if (v > 0.1 && !animateStats) {
-        setAnimateStats(true)
-      }
-    })
-
-    return () => unsubscribe()
-  }, [statsScrollProgress, animateStats])
 
   // Handle scroll for hero visibility
   useEffect(() => {
@@ -74,49 +56,6 @@ export default function GarnetGatherProjectPage() {
     "Community Platform",
     "User Experience Design",
   ]
-
-  // Counter animation for stats
-  const Counter = ({
-    end,
-    duration = 2,
-    label,
-    prefix = "",
-    suffix = "",
-  }: { end: number; duration?: number; label: string; prefix?: string; suffix?: string }) => {
-    const [count, setCount] = useState(0)
-
-    useEffect(() => {
-      if (!animateStats) return
-
-      let startTime: number
-      let animationFrameId: number
-
-      const step = (timestamp: number) => {
-        if (!startTime) startTime = timestamp
-        const progress = Math.min((timestamp - startTime) / (duration * 1000), 1)
-        setCount(Math.floor(progress * end))
-
-        if (progress < 1) {
-          animationFrameId = requestAnimationFrame(step)
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(step)
-
-      return () => cancelAnimationFrame(animationFrameId)
-    }, [animateStats, end, duration])
-
-    return (
-      <div className="text-center">
-        <h3 className="text-5xl font-bold mb-2 text-white">
-          <span className="text-[#CEB888]">{prefix}</span>
-          {count}
-          <span className="text-[#CEB888]">{suffix}</span>
-        </h3>
-        <p className="text-white/80">{label}</p>
-      </div>
-    )
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#782F40] via-[#782F40]/85 to-[#111111] text-white font-sans">
@@ -248,19 +187,6 @@ export default function GarnetGatherProjectPage() {
             </div>
             <h3 className="font-bold text-xl mb-3">Athletics Integration</h3>
             <p className="text-center text-white/70">Deep integration with FSU sports data providing team statistics and performance metrics.</p>
-          </div>
-        </div>
-
-        {/* Stats Section */}
-        <div 
-          ref={statsRef}
-          className="bg-[#782F40]/80 backdrop-blur-md rounded-2xl p-12 mb-24 border border-[#CEB888]/30 max-w-4xl mx-auto"
-        >
-          <h2 className="text-3xl font-bold mb-10 text-center">Platform Impact</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Counter end={15000} suffix="+" label="Campus Users" />
-            <Counter end={200} suffix="+" label="Analytics Reports" />
-            <Counter end={98} suffix="%" label="User Satisfaction" />
           </div>
         </div>
 

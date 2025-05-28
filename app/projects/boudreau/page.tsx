@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Book, GraduationCap, PenTool, Users, Brain, Target, ChartBar, Award, TrendingUp, Star, Clock, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowLeft, Book, GraduationCap, PenTool, Users, Brain, Target, ChartBar, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 const testimonials = [
@@ -24,13 +24,6 @@ const valueProps = [
   { icon: <Brain className="w-8 h-8 text-purple-500" />, title: "Adaptive Teaching", desc: "Flexible teaching methods that evolve based on student progress and comprehension levels." },
   { icon: <ChartBar className="w-8 h-8 text-green-500" />, title: "Progress Tracking", desc: "Regular assessments and detailed progress reports to measure academic improvement." },
   { icon: <GraduationCap className="w-8 h-8 text-amber-500" />, title: "Academic Excellence", desc: "Focus on developing strong foundational knowledge and advanced problem-solving skills." },
-]
-
-const achievements = [
-  { icon: <Star className="w-6 h-6 text-yellow-400" />, title: "Student Success", desc: "95%+ Grade Improvement" },
-  { icon: <Users className="w-6 h-6 text-blue-500" />, title: "Growing Community", desc: "20-30 Active Students" },
-  { icon: <Clock className="w-6 h-6 text-green-500" />, title: "Dedicated Support", desc: "1000+ Hours of Tutoring" },
-  { icon: <TrendingUp className="w-6 h-6 text-red-500" />, title: "Business Growth", desc: "$30K+ Revenue" },
 ]
 
 export default function BoudreauTutorsProject() {
@@ -389,36 +382,6 @@ export default function BoudreauTutorsProject() {
                 <p className="text-blue-100">{prop.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Achievements Section */}
-        <div className="max-w-5xl mx-auto mb-40 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-amber-500/10 rounded-3xl blur-3xl" />
-          
-          <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-3xl p-12 md:p-20 shadow-2xl border-2 border-white/10 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-amber-500/10 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-700" />
-            
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center relative inline-block mx-auto">
-              <span className="bg-gradient-to-r from-blue-300 to-amber-300 bg-clip-text text-transparent">Our Impact</span>
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-amber-400 rounded-full"></div>
-            </h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {achievements.map((achievement, i) => (
-                <div 
-                  key={i} 
-                  className="text-center animate-fade-in-up"
-                  style={{ animationDelay: `${i * 200}ms` }}
-                >
-                  <div className="mx-auto mb-4 p-4 rounded-full bg-gradient-to-br from-blue-500/20 to-amber-500/10 w-fit">
-                    {achievement.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">{achievement.title}</h3>
-                  <p className="text-blue-100">{achievement.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
