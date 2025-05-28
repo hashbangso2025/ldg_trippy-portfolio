@@ -317,7 +317,7 @@ export default function Home() {
                 )}
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-center text-gray-200 leading-relaxed relative z-10 font-light tracking-wide" style={{ fontFamily: "Neue Haas Grotesk, sans-serif", lineHeight: "1.8" }}>
-                Evan is an innovator, pursuing STEM Entrepreneurship at Florida State University, translates scientific innovation into impactful business ventures, architecting projects for capital growth, job creation, and sustainable impact. He aims to contribute his technical and entrepreneurial expertise to an innovative, mission-driven organization through a summer internship. Endurance sports underscore his perseverance and goal-oriented approach.
+              Evan is an innovator and Florida State University STEM Entrepreneurship scholar. Evan leverages scientific innovation to engineer valuable, viable, impactful solutions and enterprises for capital growth and sustainable value. He believes synergistic technical and business acumen drives innovation—enabling businesses, capital, and jobs for human-centered talent—seeking an internship at a leading firm to deploy his synergistic skills and drive results.
               </p>
             </div>
 
