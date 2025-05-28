@@ -118,7 +118,7 @@ export default function ProjectSection() {
       id: 3,
       title: "Tuzzy",
       description:
-        "Cultivated impactful international (brazil) business development, driving Tuzzy Esports' U.S. entry into the nation's billion-dollar esports and e-commerce markets to unlock new growth.",
+        "Engineered the Tuzzy Esports website and led its international (Brazil) business development, driving U.S. market entry into billion-dollar esports/e-commerce to unlock new growth, leveraging E-commerce, Market Analysis, AI for Business, and Online Marketing.",
       technologies: [
         { name: "E-commerce" },
         { name: "Market Analysis" },
